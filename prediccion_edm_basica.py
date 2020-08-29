@@ -103,9 +103,11 @@ x = sol[:,0:3]
 
 pos_final = sp.array([x_f, y_f, z_f, vx_f, vy_f, vz_f]) - sol[-1]
 
+vector=[]
 for el in range(len(pos_final)-3):
-    print (pos_final[el])
+    vector.append(pos_final[el])
     
+print (sp.sqrt((vector[0]**2) + (vector[1]**2) + (vector[2]**2) )) 
     
     
     
