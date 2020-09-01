@@ -6,7 +6,7 @@ from datetime import datetime
 
 a = 2.
 
-def eulerint(solucion_odeint,z0,t,Nsub):    #Funcion hecha en clases
+def eulerint(dy,z0,t,Nsub):    #Funcion hecha en clases
     Nt = len(t)
     Ndim = len(array(z0))
     z = zeros((Nt,Ndim))
