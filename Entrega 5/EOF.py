@@ -56,7 +56,7 @@ def leer_eof(fname):
 -----------------------------------------------------------------
 """
 
-nombre_eof = argv[1]          "S1A_OPER_AUX_POEORB_OPOD_20200828T121249_V20200807T225942_20200809T005942.EOF"
+nombre_eof = argv[1]        "S1A_OPER_AUX_POEORB_OPOD_20200828T121249_V20200807T225942_20200809T005942.EOF"
 t, x, y, z, vx, vy, vz = leer_eof(nombre_eof)
 
 z0 = array([x[0], y[0], z[0], vx[0], vy[0], vz[0]]) #Condicion inicial
@@ -151,13 +151,12 @@ for a in range(len(t)):
 
 
 
-
 #Acá hago lo mismo que antes pero para el caso de eulerint
     
 vector_delta2 = []
 for a in range(len(t)):
     pos_actual = array([x[a], y[a], z[a], vx[a], vy[a], vz[a]])
-    diferencia = pos_actual-sol_eulerint[a]
+    diferencia = pos_actual-sol_eulerint[a]   
 
 #ahora obtengo solo los 3 primeros valores porque son los de posicion y el resto son de velocidad q no me importan
     vector=[] 
@@ -165,6 +164,24 @@ for a in range(len(t)):
         vector.append(diferencia[el])
         
     vector_delta2.append(sqrt((vector[0]**2) + (vector[1]**2) + (vector[2]**2) ))
+
+
+#Ahora obtendre el vector de la diferencia entre eulerint y odeint.
+
+vector_diferencia = []
+for a in range(len(t)):
+    pos_actual = array([x[a], y[a], z[a], vx[a], vy[a], vz[a]])
+    diferencia = sol_odeint[a]-sol_eulerint[a]   
+
+#ahora obtengo solo los 3 primeros valores porque son los de posicion y el resto son de velocidad q no me importan
+    vector=[] 
+    for el in range(len(diferencia)-3):
+        vector.append(diferencia[el])
+        
+    vector_diferencia.append(sqrt((vector[0]**2) + (vector[1]**2) + (vector[2]**2) ))
+
+
+
 
 
 
@@ -290,7 +307,7 @@ for a in range(len(t)):
 
 
 vector_delta3 = array(vector_delta3)/1000
-
+vector_diferencia = array(vector_diferencia)/1000
 
 figure()
 title("Correccion")
@@ -299,6 +316,11 @@ plt.ylabel("Deriva,δ (KM)")
 plot(t/3600.,vector_delta3)
 
 
+figure()
+title("Eulerint vs Odeint")
+plt.xlabel("Tiempo,t (horas)")
+plt.ylabel("Deriva,δ (KM)")
+plot(t/3600.,vector_diferencia)
 
 
 
