@@ -35,7 +35,7 @@ Se puede ver que al final del tiempo derivan en 20 mil km. Esto ya que el algori
 ![alt text](https://github.com/FelipeAravenaR98/MCOC2020-P1/blob/master/Entrega%205/Deriva%20Correccion%20Odeint.png?raw=true)
 
 
-Como se puede ver, la deriva utilizando odeint disminuye a un error de 100 km solamente. Los tiempos en obtener los gráficos son practicamente los mismos y no note diferencia aplicando la correccion que sin aplicar. Esto me hace pensar que el problema de demora en eulerint es por la ineficiencia del algoritmo simplemente.
+Como se puede ver, la deriva utilizando odeint (es el mejor metodo) disminuye a un error de 100 km solamente. Los tiempos en obtener los gráficos son practicamente los mismos y no note diferencia aplicando la correccion que sin aplicar. Esto me hace pensar que el problema de demora en eulerint es por la ineficiencia del algoritmo simplemente.
 
 
 
