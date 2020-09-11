@@ -37,7 +37,9 @@ Se puede ver que al final del tiempo derivan en 20 mil km. Esto ya que el algori
 
 Como se puede ver, la deriva utilizando odeint (es el mejor metodo) disminuye a un error de 100 km solamente. Los tiempos en obtener los gráficos son practicamente los mismos y no note diferencia aplicando la correccion que sin aplicar. Esto me hace pensar que el problema de demora en eulerint es por la ineficiencia del algoritmo simplemente.
 
+# Entrega Final
 
+El unico cambio realizado al codigo fue en el Fg. Esto porque el que habia utilizado para la entrega pasada tenia un error. Ahora la deriva disminuyó muchisimo pero aun no es tan precisa.
 
 
 
